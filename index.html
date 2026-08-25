@@ -25,11 +25,9 @@
             line-height: 1.7;
         }
 
-        /* NAVIGATION */
-
         nav {
             background: #081b33;
-            padding: 17px 8%;
+            padding: 17px 7%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -48,29 +46,26 @@
         nav ul {
             list-style: none;
             display: flex;
-            gap: 24px;
+            gap: 20px;
+            flex-wrap: wrap;
         }
 
         nav a {
             color: #e8eef5;
             text-decoration: none;
-            font-size: 15px;
-            transition: 0.2s;
+            font-size: 14px;
         }
 
         nav a:hover {
             color: white;
         }
 
-        /* HERO */
-
         .hero {
             min-height: 88vh;
-            background:
-                linear-gradient(
-                    rgba(8, 27, 51, 0.94),
-                    rgba(16, 42, 76, 0.96)
-                );
+            background: linear-gradient(
+                rgba(8, 27, 51, 0.95),
+                rgba(16, 42, 76, 0.96)
+            );
             color: white;
             display: flex;
             justify-content: center;
@@ -96,7 +91,6 @@
         .hero h1 {
             font-size: 52px;
             margin-bottom: 8px;
-            letter-spacing: -1px;
         }
 
         .hero h2 {
@@ -113,27 +107,42 @@
             color: #edf3f8;
         }
 
-        .hero-tag {
-            display: inline-block;
-            margin-top: 25px;
-            padding: 9px 18px;
-            border: 1px solid rgba(255, 255, 255, 0.45);
-            border-radius: 30px;
-            font-size: 14px;
-            color: #f5f8fb;
+        .hero-buttons {
+            margin-top: 27px;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
         }
 
-        /* MAIN CONTENT */
+        .button {
+            display: inline-block;
+            padding: 10px 19px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .button-primary {
+            background: white;
+            color: #102a4c;
+        }
+
+        .button-secondary {
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            color: white;
+        }
 
         main {
-            max-width: 1050px;
+            max-width: 1080px;
             margin: auto;
             padding: 80px 25px;
         }
 
         section {
             margin-bottom: 85px;
-            scroll-margin-top: 95px;
+            scroll-margin-top: 100px;
         }
 
         .section-heading {
@@ -143,12 +152,11 @@
         .section-heading h2 {
             font-size: 34px;
             color: #0b1f3a;
-            margin-bottom: 6px;
         }
 
         .section-heading p {
             color: #657381;
-            font-size: 15px;
+            margin-top: 4px;
         }
 
         .underline {
@@ -158,8 +166,6 @@
             border-radius: 20px;
             margin-top: 12px;
         }
-
-        /* CARDS */
 
         .card {
             background: white;
@@ -173,22 +179,16 @@
             font-size: 17px;
         }
 
-        /* EXPERIENCE */
-
-        .experience-header {
-            margin-bottom: 22px;
-        }
-
         .experience-header h3 {
             font-size: 25px;
             color: #102a4c;
-            margin-bottom: 2px;
         }
 
         .company {
             font-size: 18px;
             font-weight: bold;
             color: #52616f;
+            margin-bottom: 22px;
         }
 
         .experience-description p {
@@ -196,49 +196,47 @@
             font-size: 16px;
         }
 
-        .experience-description p:last-child {
-            margin-bottom: 0;
-        }
-
-        /* PROJECTS */
-
-        .projects-grid {
+        .grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
+            gap: 24px;
         }
 
-        .project-card {
+        .small-card {
             background: white;
-            padding: 30px;
+            padding: 29px;
             border-radius: 14px;
             border: 1px solid #e5e9ed;
             box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
         }
 
-        .project-card h3 {
+        .small-card h3 {
             color: #102a4c;
-            font-size: 22px;
-            margin-bottom: 12px;
+            font-size: 21px;
+            margin-bottom: 10px;
         }
 
-        .project-card p {
+        .small-card h4 {
+            color: #52616f;
+            font-size: 15px;
+            margin-bottom: 10px;
+        }
+
+        .small-card p {
             font-size: 15px;
             color: #46515c;
         }
 
-        .project-type {
+        .tag {
             display: inline-block;
-            margin-top: 18px;
-            font-size: 13px;
-            font-weight: bold;
-            color: #214f80;
-            background: #edf4fa;
+            margin-top: 16px;
             padding: 6px 12px;
+            background: #edf4fa;
+            color: #214f80;
             border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
         }
-
-        /* SKILLS */
 
         .skills {
             display: flex;
@@ -254,62 +252,56 @@
             font-size: 14px;
             font-weight: bold;
             color: #22384f;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
         }
 
-        /* EDUCATION */
-
-        .education-title {
+        .education-card h3 {
             font-size: 23px;
             color: #102a4c;
-            margin-bottom: 5px;
         }
 
-        .degree {
+        .education-card .degree {
             font-size: 17px;
-            margin-bottom: 5px;
+            margin-top: 5px;
         }
 
-        .concentration {
+        .education-card .detail {
             color: #657381;
         }
 
-        /* FOOTER */
+        .achievement {
+            margin-top: 22px;
+            padding-top: 20px;
+            border-top: 1px solid #e5e9ed;
+        }
+
+        .achievement strong {
+            color: #102a4c;
+        }
 
         footer {
             background: #081b33;
             color: #dce6ef;
             text-align: center;
-            padding: 35px 20px;
+            padding: 38px 20px;
         }
 
         footer strong {
             color: white;
         }
 
-        /* MOBILE */
+        footer a {
+            color: white;
+        }
 
-        @media (max-width: 760px) {
-
+        @media (max-width: 800px) {
             nav {
                 flex-direction: column;
                 gap: 12px;
-                padding: 14px 20px;
             }
 
             nav ul {
-                gap: 13px;
-                flex-wrap: wrap;
                 justify-content: center;
-            }
-
-            nav a {
-                font-size: 13px;
-            }
-
-            .hero {
-                min-height: 80vh;
-                padding: 60px 25px;
+                gap: 12px;
             }
 
             .hero h1 {
@@ -320,29 +312,17 @@
                 font-size: 19px;
             }
 
-            .hero p {
-                font-size: 16px;
-            }
-
             .profile-picture {
                 width: 160px;
                 height: 160px;
             }
 
-            main {
-                padding: 60px 20px;
-            }
-
-            .section-heading h2 {
-                font-size: 29px;
+            .grid {
+                grid-template-columns: 1fr;
             }
 
             .card {
                 padding: 27px;
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -350,310 +330,443 @@
 
 <body>
 
-    <!-- NAVIGATION -->
+<nav>
+    <div class="logo">Aaraiz Zeeshan</div>
 
-    <nav>
-        <div class="logo">Aaraiz Zeeshan</div>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#volunteer">Volunteer</a></li>
+    </ul>
+</nav>
 
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#education">Education</a></li>
-        </ul>
-    </nav>
 
+<header class="hero" id="home">
 
-    <!-- HOME -->
+    <div class="hero-content">
 
-    <header class="hero" id="home">
+        <img
+            src="pfp.png"
+            alt="Professional photograph of Aaraiz Zeeshan"
+            class="profile-picture"
+        >
 
-        <div class="hero-content">
+        <h1>Aaraiz Zeeshan</h1>
 
-            <!-- Keep profile.jpg in the same GitHub folder as index.html -->
+        <h2>
+            Computer Science Graduate | Software Engineering Intern
+        </h2>
 
-            <img
-                src="pfp.png"
-                alt="Professional photograph of Aaraiz Zeeshan"
-                class="profile-picture"
+        <p>
+            Interested in software engineering, artificial intelligence,
+            cloud technology, and building practical solutions to real
+            world problems.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a
+                href="https://www.linkedin.com/in/aaraizzeeshan"
+                target="_blank"
+                class="button button-primary"
             >
+                LinkedIn
+            </a>
 
-            <h1>Aaraiz Zeeshan</h1>
+            <a href="#projects" class="button button-secondary">
+                View My Work
+            </a>
 
-            <h2>
-                Computer Science Graduate | Software Engineering Intern
-            </h2>
+        </div>
 
-            <p>
-                I am interested in software engineering, artificial intelligence,
-                and building practical technology solutions that solve real
-                problems.
+    </div>
+
+</header>
+
+
+<main>
+
+
+    <!-- ABOUT -->
+
+    <section id="about">
+
+        <div class="section-heading">
+            <h2>About Me</h2>
+            <div class="underline"></div>
+        </div>
+
+        <div class="card">
+
+            <p class="about-text">
+                I am a Computer Science graduate from DePaul University with
+                an interest in software engineering, artificial intelligence,
+                and cloud technology. I enjoy solving problems, learning new
+                technologies, and understanding how different parts of a
+                system work together. Through my academic projects and
+                professional experience, I have developed skills in software
+                development, databases, backend development, teamwork, and
+                communication. I am interested in opportunities where I can
+                continue developing my technical skills while contributing
+                to meaningful software projects.
             </p>
 
-            <div class="hero-tag">
-                Career Portfolio
+        </div>
+
+    </section>
+
+
+    <!-- EXPERIENCE - LEFT UNCHANGED -->
+
+    <section id="experience">
+
+        <div class="section-heading">
+            <h2>Professional Experience</h2>
+            <p>My current professional experience in software development.</p>
+            <div class="underline"></div>
+        </div>
+
+        <div class="card">
+
+            <div class="experience-header">
+
+                <h3>Software Engineering Intern</h3>
+
+                <p class="company">
+                    Embellish Trend
+                </p>
+
+            </div>
+
+            <div class="experience-description">
+
+                <p>
+                    At Embellish Trend, I support the development and
+                    improvement of the company's website and digital tools.
+                    My responsibilities include completing technical tasks,
+                    troubleshooting issues, collaborating with team members,
+                    and making updates based on project requirements.
+                </p>
+
+                <p>
+                    Throughout my internship, I have become more independent
+                    in completing assignments and more confident communicating
+                    with others about project needs. I have learned how to ask
+                    the right questions, receive feedback, make adjustments,
+                    and approach technical problems from both a user and
+                    business perspective.
+                </p>
+
+                <p>
+                    This experience has given me a better understanding of
+                    how software development works in a professional
+                    environment while strengthening my problem solving,
+                    communication, teamwork, and technical skills. It has
+                    also reinforced my interest in continuing to grow within
+                    the software engineering field.
+                </p>
+
             </div>
 
         </div>
 
-    </header>
+    </section>
 
 
-    <main>
+    <!-- PROJECTS -->
 
-        <!-- ABOUT -->
+    <section id="projects">
 
-        <section id="about">
+        <div class="section-heading">
+            <h2>Selected Projects</h2>
+            <p>Examples of software projects I have worked on.</p>
+            <div class="underline"></div>
+        </div>
 
-            <div class="section-heading">
-                <h2>About Me</h2>
-                <div class="underline"></div>
-            </div>
-
-            <div class="card">
-
-                <p class="about-text">
-                    I am a Computer Science graduate with a strong interest in
-                    software engineering and building practical technology
-                    solutions. Through my experience as a Software Engineering
-                    Intern at Embellish Trend, I have gained experience working
-                    on technical projects, troubleshooting problems, and
-                    collaborating with others to meet project needs. I enjoy
-                    problem solving, learning new technologies, and finding ways
-                    to improve software and the overall user experience. My goal
-                    is to continue growing as a software engineer while
-                    contributing to projects that have a real impact on users
-                    and businesses.
-                </p>
-
-            </div>
-
-        </section>
+        <div class="grid">
 
 
-        <!-- EXPERIENCE -->
+            <div class="small-card">
 
-        <section id="experience">
+                <h3>HeartBeat Application</h3>
 
-            <div class="section-heading">
-                <h2>Professional Experience</h2>
-                <p>Experience that has helped shape my professional development.</p>
-                <div class="underline"></div>
-            </div>
-
-            <div class="card">
-
-                <div class="experience-header">
-
-                    <h3>Software Engineering Intern</h3>
-
-                    <p class="company">
-                        Embellish Trend
-                    </p>
-
-                </div>
-
-                <div class="experience-description">
-
-                    <p>
-                        At Embellish Trend, I support the development and
-                        improvement of the company's website and digital tools.
-                        My responsibilities include completing technical tasks,
-                        troubleshooting issues, collaborating with team members,
-                        and making updates based on project requirements.
-                    </p>
-
-                    <p>
-                        Throughout my internship, I have become more independent
-                        in completing assignments and more confident communicating
-                        with others about project needs. I have learned how to ask
-                        the right questions, receive feedback, make adjustments,
-                        and approach technical problems from both a user and
-                        business perspective.
-                    </p>
-
-                    <p>
-                        This experience has given me a better understanding of
-                        how software development works in a professional
-                        environment while strengthening my problem solving,
-                        communication, teamwork, and technical skills. It has
-                        also reinforced my interest in continuing to grow within
-                        the software engineering field.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- PROJECTS -->
-
-        <section id="projects">
-
-            <div class="section-heading">
-
-                <h2>Selected Projects</h2>
+                <h4>Backend Developer</h4>
 
                 <p>
-                    A few examples of projects that reflect my software
-                    development experience.
+                    Worked on the backend of a Flutter mobile application
+                    using Spring Boot. I helped build REST APIs, controllers,
+                    services, repositories, and JPA entities while connecting
+                    the application to PostgreSQL. I also worked with the
+                    frontend team to support reliable API integration.
                 </p>
 
-                <div class="underline"></div>
+                <span class="tag">
+                    Spring Boot • Flutter • PostgreSQL
+                </span>
 
             </div>
 
-            <div class="projects-grid">
 
+            <div class="small-card">
 
-                <div class="project-card">
-
-                    <h3>Heartbeat</h3>
-
-                    <p>
-                        A software project designed around managing course
-                        assignments and submissions. I contributed to the backend
-                        development of the application, including database
-                        integration, application logic, and functionality needed
-                        to connect different parts of the system.
-                    </p>
-
-                    <span class="project-type">
-                        Software Development
-                    </span>
-
-                </div>
-
-
-                <div class="project-card">
-
-                    <h3>PulseEye</h3>
-
-                    <p>
-                        A server monitoring project created to track system
-                        health and identify servers experiencing problems. The
-                        project helped me practice backend development,
-                        database management, API development, and working with
-                        system monitoring data.
-                    </p>
-
-                    <span class="project-type">
-                        Backend Development
-                    </span>
-
-                </div>
-
-
-            </div>
-
-        </section>
-
-
-        <!-- SKILLS -->
-
-        <section id="skills">
-
-            <div class="section-heading">
-
-                <h2>Technical Skills</h2>
+                <h3>ProductBook Trading System</h3>
 
                 <p>
-                    Technologies and tools I have gained experience working with.
+                    Built a Java based stock exchange simulation using
+                    object oriented programming concepts including
+                    inheritance, interfaces, enums, exception handling,
+                    and multiple software design patterns.
                 </p>
 
-                <div class="underline"></div>
+                <span class="tag">
+                    Java • Object Oriented Design
+                </span>
 
             </div>
 
 
-            <div class="skills">
+            <div class="small-card">
 
-                <span class="skill">Java</span>
+                <h3>Price and PriceFactory</h3>
 
-                <span class="skill">Python</span>
-
-                <span class="skill">SQL</span>
-
-                <span class="skill">Spring Boot</span>
-
-                <span class="skill">PostgreSQL</span>
-
-                <span class="skill">FastAPI</span>
-
-                <span class="skill">Git</span>
-
-                <span class="skill">Linux</span>
-
-                <span class="skill">HTML</span>
-
-                <span class="skill">CSS</span>
-
-                <span class="skill">JavaScript</span>
-
-                <span class="skill">Artificial Intelligence</span>
-
-            </div>
-
-        </section>
-
-
-        <!-- EDUCATION -->
-
-        <section id="education">
-
-            <div class="section-heading">
-
-                <h2>Education</h2>
-
-                <div class="underline"></div>
-
-            </div>
-
-
-            <div class="card">
-
-                <h3 class="education-title">
-                    DePaul University
-                </h3>
-
-                <p class="degree">
-                    Bachelor of Science in Computer Science
+                <p>
+                    Developed Java classes for handling financial price
+                    objects with validation, arithmetic operations,
+                    comparison methods, exception handling, and a factory
+                    based object creation approach.
                 </p>
 
-                <p class="concentration">
-                    Concentration in Artificial Intelligence
+                <span class="tag">
+                    Java • Design Patterns
+                </span>
+
+            </div>
+
+
+            <div class="small-card">
+
+                <h3>Networking Lab</h3>
+
+                <p>
+                    Configured Cisco routers and switches through the command
+                    line, assigned IP addresses, connected multiple network
+                    devices, and tested and troubleshot communication between
+                    systems.
+                </p>
+
+                <span class="tag">
+                    Networking • Cisco
+                </span>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- SKILLS -->
+
+    <section id="skills">
+
+        <div class="section-heading">
+            <h2>Technical Skills</h2>
+            <p>Technologies and concepts I have worked with.</p>
+            <div class="underline"></div>
+        </div>
+
+        <div class="skills">
+
+            <span class="skill">Java</span>
+            <span class="skill">Python</span>
+            <span class="skill">SQL</span>
+            <span class="skill">Spring Boot</span>
+            <span class="skill">PostgreSQL</span>
+            <span class="skill">Flutter</span>
+            <span class="skill">Git</span>
+            <span class="skill">Linux</span>
+            <span class="skill">HTML</span>
+            <span class="skill">CSS</span>
+            <span class="skill">Artificial Intelligence</span>
+            <span class="skill">Machine Learning</span>
+            <span class="skill">Cloud Computing</span>
+            <span class="skill">Networking</span>
+
+        </div>
+
+    </section>
+
+
+    <!-- EDUCATION -->
+
+    <section id="education">
+
+        <div class="section-heading">
+            <h2>Education</h2>
+            <div class="underline"></div>
+        </div>
+
+        <div class="card education-card">
+
+            <h3>DePaul University</h3>
+
+            <p class="degree">
+                Bachelor of Science in Computer Science
+            </p>
+
+            <p class="detail">
+                Concentration in Artificial Intelligence
+            </p>
+
+            <div class="achievement">
+
+                <strong>Academic Recognition</strong>
+
+                <p>
+                    Dean's List: Autumn 2024, Winter 2025, and Spring 2025
                 </p>
 
             </div>
 
-        </section>
+        </div>
+
+    </section>
 
 
-    </main>
+    <!-- CERTIFICATIONS -->
+
+    <section id="certifications">
+
+        <div class="section-heading">
+            <h2>Certifications</h2>
+            <p>Professional learning completed in cloud technology.</p>
+            <div class="underline"></div>
+        </div>
+
+        <div class="grid">
 
 
-    <!-- FOOTER -->
+            <div class="small-card">
 
-    <footer>
+                <h3>Cloud Digital Leader</h3>
 
-        <p>
-            <strong>Aaraiz Zeeshan</strong>
-        </p>
+                <h4>Google</h4>
 
-        <p>
-            Computer Science | Software Engineering
-        </p>
+                <p>
+                    Earned the Google Cloud Digital Leader certification,
+                    demonstrating knowledge of cloud technology, digital
+                    transformation, Google Cloud products, and business
+                    applications of cloud computing.
+                </p>
 
-        <p style="margin-top: 12px; font-size: 13px;">
-            &copy; 2026 Aaraiz Zeeshan
-        </p>
+            </div>
 
-    </footer>
 
+            <div class="small-card">
+
+                <h3>Google Cloud Learning</h3>
+
+                <h4>Google Cloud</h4>
+
+                <p>
+                    Completed additional Google Cloud learning in artificial
+                    intelligence, data transformation, digital transformation,
+                    trust and security, and modernizing infrastructure and
+                    applications.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- VOLUNTEER -->
+
+    <section id="volunteer">
+
+        <div class="section-heading">
+            <h2>Volunteer Experience</h2>
+            <p>Technology experience outside of school and work.</p>
+            <div class="underline"></div>
+        </div>
+
+        <div class="grid">
+
+
+            <div class="small-card">
+
+                <h3>Volunteer Technology Assistant</h3>
+
+                <h4>Glen Ellyn Public Library</h4>
+
+                <p>
+                    Helped patrons with everyday technology questions,
+                    including device setup, applications, and online
+                    services. I focused on explaining solutions clearly
+                    and helping users become more comfortable using
+                    technology.
+                </p>
+
+            </div>
+
+
+            <div class="small-card">
+
+                <h3>PC Building and Setup</h3>
+
+                <h4>Volunteer Tech Support</h4>
+
+                <p>
+                    Helped community members select compatible PC hardware,
+                    assemble computers, install operating systems and
+                    drivers, troubleshoot problems, and make sure completed
+                    systems were functioning properly.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<footer>
+
+    <p>
+        <strong>Aaraiz Zeeshan</strong>
+    </p>
+
+    <p>
+        Computer Science | Software Engineering | Artificial Intelligence
+    </p>
+
+    <p style="margin-top: 10px;">
+        <a
+            href="https://www.linkedin.com/in/aaraizzeeshan"
+            target="_blank"
+        >
+            LinkedIn
+        </a>
+    </p>
+
+    <p style="margin-top: 14px; font-size: 13px;">
+        &copy; 2026 Aaraiz Zeeshan
+    </p>
+
+</footer>
 
 </body>
 
