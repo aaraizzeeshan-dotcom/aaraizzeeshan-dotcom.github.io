@@ -5,22 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description"
-          content="Career portfolio of Aaraiz Zeeshan, Computer Science graduate focused on software engineering, artificial intelligence, and technology.">
+    <meta
+        name="description"
+        content="Career portfolio of Aaraiz Zeeshan, a Computer Science graduate focused on software engineering, artificial intelligence, and technology."
+    >
 
-    <title>Aaraiz Zeeshan | Career Portfolio</title>
+    <title>Aaraiz Zeeshan | Software Engineering Portfolio</title>
 
     <style>
         :root {
-            --navy: #071a2f;
-            --navy-light: #102d4f;
-            --blue: #2867a5;
-            --blue-light: #eaf3fb;
-            --background: #f5f7fa;
-            --text: #1f2933;
-            --muted: #637282;
-            --white: #ffffff;
-            --border: #e3e8ed;
+            --bg: #f4f7fb;
+            --surface: #ffffff;
+            --surface-soft: #edf4fa;
+
+            --navy: #071729;
+            --navy-2: #0c2744;
+            --blue: #246aa5;
+            --blue-light: #78add7;
+
+            --text: #1b2733;
+            --muted: #667684;
+            --border: #dfe6ec;
+
+            --shadow:
+                0 14px 40px rgba(13, 38, 63, 0.08);
+
+            --radius: 20px;
         }
 
         * {
@@ -34,13 +44,23 @@
         }
 
         body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: var(--background);
+            font-family:
+                Inter,
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            background: var(--bg);
             color: var(--text);
+
             line-height: 1.7;
         }
 
-        /* NAVIGATION */
+        a {
+            color: inherit;
+        }
+
+        /* -------------------- NAVIGATION -------------------- */
 
         nav {
             position: sticky;
@@ -53,133 +73,175 @@
 
             padding: 16px 7%;
 
-            background: rgba(7, 26, 47, 0.98);
-            box-shadow: 0 3px 18px rgba(0, 0, 0, 0.14);
+            background:
+                rgba(7, 23, 41, 0.96);
+
+            backdrop-filter: blur(12px);
+
+            border-bottom:
+                1px solid rgba(255,255,255,0.08);
         }
 
         .logo {
             color: white;
-            font-size: 20px;
+
             font-weight: 700;
+            font-size: 20px;
+
             letter-spacing: 0.2px;
         }
 
-        nav ul {
+        .nav-links {
             list-style: none;
+
             display: flex;
             align-items: center;
-            gap: 19px;
+            gap: 22px;
         }
 
-        nav a {
-            color: #e6edf5;
+        .nav-links a {
+            color: #dce7f0;
+
             text-decoration: none;
             font-size: 14px;
+
             transition: 0.2s ease;
         }
 
-        nav a:hover {
+        .nav-links a:hover {
             color: white;
         }
 
-        /* HERO */
+        .nav-contact {
+            padding: 8px 15px;
+
+            border: 1px solid
+                rgba(255,255,255,0.25);
+
+            border-radius: 30px;
+        }
+
+        /* -------------------- HERO -------------------- */
 
         .hero {
-            min-height: 91vh;
+            min-height: 92vh;
 
             display: flex;
             align-items: center;
-            justify-content: center;
 
-            padding: 80px 8%;
+            padding: 90px 8%;
+
+            color: white;
 
             background:
                 radial-gradient(
-                    circle at 80% 20%,
-                    rgba(67, 126, 183, 0.20),
+                    circle at 85% 20%,
+                    rgba(74, 145, 202, 0.28),
+                    transparent 30%
+                ),
+
+                radial-gradient(
+                    circle at 10% 80%,
+                    rgba(54, 104, 151, 0.18),
                     transparent 35%
                 ),
+
                 linear-gradient(
                     135deg,
-                    #071a2f,
-                    #102d4f
+                    #061523 0%,
+                    #0b2744 55%,
+                    #123c62 100%
                 );
-
-            color: white;
         }
 
-        .hero-content {
-            max-width: 880px;
-            text-align: center;
+        .hero-inner {
+            width: 100%;
+            max-width: 1180px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                1.3fr 0.7fr;
+
+            align-items: center;
+
+            gap: 70px;
         }
 
-        .profile-picture {
-            width: 190px;
-            height: 190px;
+        .hero-label {
+            display: inline-flex;
+            align-items: center;
 
-            border-radius: 50%;
-            object-fit: cover;
+            gap: 8px;
 
-            border: 5px solid white;
+            margin-bottom: 18px;
 
-            margin-bottom: 25px;
+            padding: 7px 13px;
 
-            box-shadow:
-                0 12px 35px rgba(0, 0, 0, 0.35);
-        }
+            border-radius: 30px;
 
-        .eyebrow {
-            display: inline-block;
+            background:
+                rgba(255,255,255,0.08);
 
-            margin-bottom: 12px;
+            border:
+                1px solid rgba(255,255,255,0.12);
+
+            color: #cde2f4;
 
             font-size: 13px;
             font-weight: bold;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
 
-            color: #b9d6ef;
+            letter-spacing: 0.6px;
         }
 
         .hero h1 {
-            font-size: 55px;
-            line-height: 1.1;
-            letter-spacing: -1.5px;
-            margin-bottom: 10px;
+            font-size: 67px;
+
+            line-height: 1.02;
+
+            letter-spacing: -2px;
+
+            margin-bottom: 16px;
         }
 
-        .hero h2 {
-            font-size: 22px;
-            font-weight: normal;
-            color: #d7e5f2;
-            margin-bottom: 20px;
+        .hero-role {
+            font-size: 24px;
+
+            color: #d7e7f4;
+
+            margin-bottom: 22px;
         }
 
         .hero-description {
             max-width: 700px;
-            margin: auto;
 
             font-size: 18px;
-            color: #edf4f9;
+
+            color: #e1ebf3;
         }
 
         .hero-buttons {
             display: flex;
-            justify-content: center;
             flex-wrap: wrap;
 
-            gap: 12px;
-            margin-top: 29px;
+            gap: 13px;
+
+            margin-top: 31px;
         }
 
         .button {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
 
             padding: 11px 21px;
 
             border-radius: 30px;
 
             text-decoration: none;
+
             font-size: 14px;
             font-weight: bold;
 
@@ -193,143 +255,287 @@
 
         .button-primary:hover {
             transform: translateY(-2px);
+
+            box-shadow:
+                0 8px 20px rgba(0,0,0,0.18);
         }
 
         .button-outline {
-            border: 1px solid rgba(255, 255, 255, 0.55);
+            border:
+                1px solid rgba(255,255,255,0.35);
+
             color: white;
+
+            background:
+                rgba(255,255,255,0.04);
         }
 
         .button-outline:hover {
-            background: rgba(255, 255, 255, 0.08);
+            background:
+                rgba(255,255,255,0.10);
         }
 
-        /* MAIN */
+        .hero-photo-wrap {
+            display: flex;
+            justify-content: center;
+        }
+
+        .photo-frame {
+            position: relative;
+        }
+
+        .photo-frame::before {
+            content: "";
+
+            position: absolute;
+
+            width: 270px;
+            height: 270px;
+
+            top: 18px;
+            left: 18px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(89, 158, 213, 0.28);
+
+            filter: blur(2px);
+        }
+
+        .profile-picture {
+            position: relative;
+
+            width: 270px;
+            height: 270px;
+
+            border-radius: 50%;
+
+            object-fit: cover;
+
+            border: 7px solid white;
+
+            box-shadow:
+                0 22px 55px rgba(0,0,0,0.35);
+        }
+
+        /* -------------------- GENERAL -------------------- */
 
         main {
-            max-width: 1100px;
+            max-width: 1160px;
+
             margin: auto;
-            padding: 85px 25px;
+
+            padding: 95px 25px;
         }
 
         section {
-            margin-bottom: 95px;
+            margin-bottom: 110px;
+
             scroll-margin-top: 95px;
         }
 
         .section-heading {
-            margin-bottom: 31px;
+            max-width: 760px;
+
+            margin-bottom: 35px;
+        }
+
+        .section-kicker {
+            color: var(--blue);
+
+            font-size: 13px;
+            font-weight: bold;
+
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+
+            margin-bottom: 7px;
         }
 
         .section-heading h2 {
-            color: var(--navy);
-            font-size: 35px;
+            font-size: 38px;
+
             line-height: 1.2;
+
+            color: var(--navy);
+
+            letter-spacing: -0.7px;
         }
 
         .section-heading p {
+            margin-top: 8px;
+
             color: var(--muted);
-            margin-top: 6px;
+
+            font-size: 16px;
         }
-
-        .underline {
-            width: 52px;
-            height: 4px;
-
-            margin-top: 13px;
-
-            border-radius: 20px;
-            background: var(--blue);
-        }
-
-        /* CARDS */
 
         .card {
-            background: white;
+            background: var(--surface);
 
-            padding: 38px;
+            border:
+                1px solid var(--border);
 
-            border-radius: 15px;
-            border: 1px solid var(--border);
+            border-radius: var(--radius);
 
-            box-shadow:
-                0 6px 22px rgba(0, 0, 0, 0.06);
+            box-shadow: var(--shadow);
         }
 
-        /* ABOUT */
+        /* -------------------- ABOUT -------------------- */
 
-        .about-text {
+        .about-grid {
+            display: grid;
+
+            grid-template-columns:
+                1.5fr 0.7fr;
+
+            gap: 25px;
+        }
+
+        .about-main {
+            padding: 42px;
+        }
+
+        .about-main p {
             font-size: 17px;
         }
 
-        .quick-info {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-
-            gap: 16px;
-            margin-top: 28px;
+        .about-main p + p {
+            margin-top: 17px;
         }
 
-        .quick-item {
-            background: #f7f9fb;
-            border: 1px solid var(--border);
+        .about-side {
+            display: flex;
+            flex-direction: column;
 
-            padding: 18px;
-
-            border-radius: 10px;
+            gap: 15px;
         }
 
-        .quick-item strong {
+        .quick-card {
+            padding: 24px;
+
+            background: var(--surface);
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 15px;
+
+            box-shadow:
+                0 6px 18px rgba(13,38,63,0.04);
+        }
+
+        .quick-card span {
             display: block;
+
+            color: var(--blue);
+
+            font-size: 12px;
+            font-weight: bold;
+
+            text-transform: uppercase;
+            letter-spacing: 0.9px;
+
+            margin-bottom: 4px;
+        }
+
+        .quick-card strong {
             color: var(--navy);
-            margin-bottom: 3px;
+
+            font-size: 16px;
         }
 
-        .quick-item span {
-            color: var(--muted);
-            font-size: 14px;
+        /* -------------------- EXPERIENCE -------------------- */
+
+        .timeline {
+            position: relative;
+
+            margin-left: 10px;
         }
 
-        /* EXPERIENCE */
+        .timeline::before {
+            content: "";
+
+            position: absolute;
+
+            left: 9px;
+            top: 10px;
+            bottom: 10px;
+
+            width: 2px;
+
+            background:
+                #cddbe7;
+        }
+
+        .experience-item {
+            position: relative;
+
+            padding-left: 45px;
+
+            margin-bottom: 28px;
+        }
+
+        .experience-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-dot {
+            position: absolute;
+
+            width: 20px;
+            height: 20px;
+
+            left: 0;
+            top: 22px;
+
+            border-radius: 50%;
+
+            background: var(--blue);
+
+            border: 5px solid var(--bg);
+        }
 
         .experience-card {
-            margin-bottom: 25px;
-        }
-
-        .experience-card:last-child {
-            margin-bottom: 0;
+            padding: 35px 38px;
         }
 
         .experience-top {
             display: flex;
+
             justify-content: space-between;
             align-items: flex-start;
+
             gap: 20px;
 
-            margin-bottom: 20px;
+            margin-bottom: 19px;
         }
 
         .experience-top h3 {
-            color: var(--navy-light);
             font-size: 24px;
-            line-height: 1.3;
+
+            color: var(--navy);
         }
 
         .company {
+            margin-top: 3px;
+
             color: var(--muted);
+
             font-size: 17px;
             font-weight: bold;
-            margin-top: 3px;
         }
 
-        .experience-badge {
+        .experience-type {
             flex-shrink: 0;
 
             padding: 6px 12px;
 
             border-radius: 20px;
 
-            background: var(--blue-light);
+            background: var(--surface-soft);
+
             color: var(--blue);
 
             font-size: 12px;
@@ -337,217 +543,342 @@
         }
 
         .experience-description p {
-            margin-bottom: 16px;
+            margin-bottom: 14px;
         }
 
         .experience-description p:last-child {
             margin-bottom: 0;
         }
 
-        /* PROJECTS */
+        /* -------------------- PROJECTS -------------------- */
 
-        .grid {
+        .projects-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
             gap: 24px;
         }
 
         .project-card {
-            position: relative;
+            padding: 32px;
 
-            background: white;
-            padding: 30px;
+            background: var(--surface);
 
-            border: 1px solid var(--border);
-            border-radius: 14px;
+            border:
+                1px solid var(--border);
+
+            border-radius: 18px;
 
             box-shadow:
-                0 5px 18px rgba(0, 0, 0, 0.055);
+                0 8px 24px rgba(13,38,63,0.055);
 
-            transition: 0.2s ease;
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
         }
 
         .project-card:hover {
-            transform: translateY(-4px);
+            transform: translateY(-5px);
 
             box-shadow:
-                0 9px 25px rgba(0, 0, 0, 0.09);
+                0 14px 30px rgba(13,38,63,0.10);
         }
 
         .project-number {
             color: var(--blue);
+
             font-size: 12px;
             font-weight: bold;
-            letter-spacing: 1px;
 
-            margin-bottom: 9px;
+            letter-spacing: 1.3px;
+
+            margin-bottom: 8px;
         }
 
         .project-card h3 {
-            color: var(--navy-light);
             font-size: 22px;
-            margin-bottom: 10px;
+
+            color: var(--navy);
+
+            margin-bottom: 11px;
         }
 
         .project-card p {
-            color: #485662;
+            color: #4c5d6b;
+
             font-size: 15px;
         }
 
-        .tag {
-            display: inline-block;
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+
+            gap: 8px;
 
             margin-top: 18px;
-            padding: 6px 12px;
+        }
+
+        .tag {
+            padding: 6px 11px;
 
             border-radius: 20px;
 
-            background: var(--blue-light);
-            color: #245a8a;
+            background: var(--surface-soft);
+
+            color: #245f8f;
 
             font-size: 12px;
             font-weight: bold;
         }
 
-        /* SKILLS */
+        /* -------------------- SKILLS -------------------- */
 
-        .skill-category {
-            margin-bottom: 27px;
+        .skills-card {
+            padding: 38px;
         }
 
-        .skill-category:last-child {
+        .skill-section {
+            margin-bottom: 29px;
+        }
+
+        .skill-section:last-child {
             margin-bottom: 0;
         }
 
-        .skill-category h3 {
+        .skill-section h3 {
             color: var(--navy);
-            font-size: 17px;
+
+            font-size: 18px;
+
             margin-bottom: 13px;
         }
 
         .skills {
             display: flex;
             flex-wrap: wrap;
+
             gap: 10px;
         }
 
         .skill {
             padding: 9px 15px;
 
-            border-radius: 25px;
-            border: 1px solid #d8e0e7;
+            background: #f8fafc;
 
-            background: white;
+            border:
+                1px solid #dce5ec;
+
+            border-radius: 25px;
+
+            color: #344c60;
+
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        /* -------------------- EDUCATION -------------------- */
+
+        .education-layout {
+            display: grid;
+
+            grid-template-columns:
+                1.2fr 0.8fr;
+
+            gap: 24px;
+        }
+
+        .education-card {
+            padding: 38px;
+        }
+
+        .education-card h3 {
+            color: var(--navy);
+
+            font-size: 25px;
+        }
+
+        .degree {
+            margin-top: 5px;
+
+            font-size: 17px;
+        }
+
+        .education-detail {
+            color: var(--muted);
+        }
+
+        .recognition {
+            margin-top: 25px;
+
+            padding-top: 20px;
+
+            border-top:
+                1px solid var(--border);
+        }
+
+        .recognition strong {
+            color: var(--navy);
+        }
+
+        .cert-card {
+            padding: 30px;
+        }
+
+        .cert-card + .cert-card {
+            margin-top: 17px;
+        }
+
+        .cert-card h3 {
+            color: var(--navy);
+
+            font-size: 19px;
+
+            margin-bottom: 4px;
+        }
+
+        .cert-provider {
+            color: var(--blue);
 
             font-size: 14px;
             font-weight: bold;
 
-            color: #34495d;
+            margin-bottom: 9px;
         }
 
-        /* EDUCATION */
+        /* -------------------- VOLUNTEER -------------------- */
 
-        .education-school {
-            font-size: 24px;
-            color: var(--navy-light);
+        .volunteer-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 24px;
         }
 
-        .degree {
-            font-size: 17px;
-            margin-top: 4px;
+        .volunteer-card {
+            padding: 30px;
         }
-
-        .minor-detail {
-            color: var(--muted);
-        }
-
-        .achievement-box {
-            margin-top: 24px;
-            padding-top: 20px;
-            border-top: 1px solid var(--border);
-        }
-
-        .achievement-box strong {
-            color: var(--navy);
-        }
-
-        /* CERTIFICATIONS */
-
-        .cert-card h3 {
-            color: var(--navy-light);
-            font-size: 20px;
-            margin-bottom: 5px;
-        }
-
-        .cert-provider {
-            color: var(--muted);
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        /* VOLUNTEER */
 
         .volunteer-card h3 {
-            color: var(--navy-light);
+            color: var(--navy);
+
             font-size: 21px;
         }
 
         .volunteer-card h4 {
             color: var(--muted);
-            margin: 3px 0 11px;
+
+            font-size: 14px;
+
+            margin: 4px 0 12px;
         }
 
-        /* CONTACT */
+        /* -------------------- CONTACT -------------------- */
 
-        .contact-section {
-            text-align: center;
+        .contact-box {
+            display: grid;
 
-            background:
-                linear-gradient(
-                    135deg,
-                    var(--navy),
-                    var(--navy-light)
-                );
+            grid-template-columns:
+                1.3fr 0.7fr;
+
+            align-items: center;
+
+            gap: 30px;
+
+            padding: 55px;
+
+            border-radius: 24px;
 
             color: white;
 
-            padding: 55px 35px;
+            background:
+                radial-gradient(
+                    circle at 90% 10%,
+                    rgba(75, 150, 211, 0.30),
+                    transparent 35%
+                ),
 
-            border-radius: 18px;
+                linear-gradient(
+                    135deg,
+                    #07182a,
+                    #10395e
+                );
 
             box-shadow:
-                0 10px 30px rgba(0, 0, 0, 0.13);
+                0 20px 50px rgba(9,30,50,0.18);
         }
 
-        .contact-section h2 {
-            font-size: 34px;
-            margin-bottom: 10px;
+        .contact-box h2 {
+            font-size: 38px;
+
+            margin-bottom: 9px;
         }
 
-        .contact-section p {
-            max-width: 620px;
-            margin: auto;
-            color: #dce8f3;
+        .contact-box p {
+            color: #d9e7f2;
+
+            max-width: 680px;
         }
 
-        .contact-buttons {
+        .contact-actions {
             display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
+            flex-direction: column;
 
             gap: 12px;
-            margin-top: 25px;
         }
 
-        /* FOOTER */
+        .contact-link {
+            display: block;
+
+            padding: 12px 18px;
+
+            border-radius: 12px;
+
+            background:
+                rgba(255,255,255,0.08);
+
+            border:
+                1px solid rgba(255,255,255,0.16);
+
+            color: white;
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            transition: 0.2s ease;
+        }
+
+        .contact-link:hover {
+            background:
+                rgba(255,255,255,0.14);
+        }
+
+        .contact-link strong {
+            display: block;
+
+            margin-bottom: 2px;
+        }
+
+        .contact-link span {
+            color: #cbdce9;
+
+            font-size: 13px;
+        }
+
+        /* -------------------- FOOTER -------------------- */
 
         footer {
-            background: #061626;
-            color: #d7e1ea;
+            background: #06131f;
+
+            color: #ccd8e3;
+
+            padding: 38px 20px;
 
             text-align: center;
-
-            padding: 35px 20px;
         }
 
         footer strong {
@@ -558,31 +889,104 @@
             font-size: 14px;
         }
 
-        /* MOBILE */
+        .footer-small {
+            margin-top: 9px;
 
-        @media (max-width: 850px) {
+            color: #8fa4b6;
+
+            font-size: 12px;
+        }
+
+        /* -------------------- RESPONSIVE -------------------- */
+
+        @media (max-width: 900px) {
 
             nav {
                 flex-direction: column;
+
                 gap: 12px;
             }
 
-            nav ul {
+            .nav-links {
                 justify-content: center;
+
                 flex-wrap: wrap;
-                gap: 11px 15px;
+
+                gap: 11px 16px;
+            }
+
+            .hero-inner,
+            .about-grid,
+            .education-layout,
+            .contact-box {
+                grid-template-columns: 1fr;
             }
 
             .hero {
-                min-height: 83vh;
-                padding: 65px 24px;
+                text-align: center;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-photo-wrap {
+                order: -1;
             }
 
             .hero h1 {
-                font-size: 40px;
+                font-size: 48px;
             }
 
-            .hero h2 {
+            .profile-picture {
+                width: 210px;
+                height: 210px;
+            }
+
+            .photo-frame::before {
+                width: 210px;
+                height: 210px;
+            }
+
+            .projects-grid,
+            .volunteer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-actions {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+
+            .contact-link {
+                flex: 1;
+                min-width: 210px;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            nav {
+                padding:
+                    14px 18px;
+            }
+
+            .nav-contact {
+                padding: 0;
+
+                border: none;
+            }
+
+            .hero {
+                padding:
+                    70px 22px;
+            }
+
+            .hero h1 {
+                font-size: 39px;
+            }
+
+            .hero-role {
                 font-size: 19px;
             }
 
@@ -590,33 +994,49 @@
                 font-size: 16px;
             }
 
-            .profile-picture {
-                width: 165px;
-                height: 165px;
-            }
-
             main {
-                padding: 65px 20px;
+                padding:
+                    70px 18px;
             }
 
-            .grid,
-            .quick-info {
-                grid-template-columns: 1fr;
+            section {
+                margin-bottom: 85px;
+            }
+
+            .section-heading h2 {
+                font-size: 31px;
+            }
+
+            .about-main,
+            .experience-card,
+            .skills-card,
+            .education-card {
+                padding: 27px;
             }
 
             .experience-top {
                 flex-direction: column;
+
                 gap: 8px;
             }
 
-            .card {
-                padding: 28px;
+            .timeline {
+                margin-left: 0;
             }
 
-            .section-heading h2 {
-                font-size: 30px;
+            .experience-item {
+                padding-left: 34px;
+            }
+
+            .contact-box {
+                padding: 36px 26px;
+            }
+
+            .contact-box h2 {
+                font-size: 31px;
             }
         }
+
     </style>
 </head>
 
@@ -624,7 +1044,7 @@
 <body>
 
 
-<!-- NAVIGATION -->
+<!-- ==================== NAVIGATION ==================== -->
 
 <nav>
 
@@ -632,76 +1052,117 @@
         Aaraiz Zeeshan
     </div>
 
-    <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#certifications">Certifications</a></li>
-        <li><a href="#volunteer">Volunteer</a></li>
-        <li><a href="#contact">Contact</a></li>
+    <ul class="nav-links">
+
+        <li>
+            <a href="#about">
+                About
+            </a>
+        </li>
+
+        <li>
+            <a href="#experience">
+                Experience
+            </a>
+        </li>
+
+        <li>
+            <a href="#projects">
+                Projects
+            </a>
+        </li>
+
+        <li>
+            <a href="#skills">
+                Skills
+            </a>
+        </li>
+
+        <li>
+            <a href="#education">
+                Education
+            </a>
+        </li>
+
+        <li>
+            <a href="#contact" class="nav-contact">
+                Contact
+            </a>
+        </li>
+
     </ul>
 
 </nav>
 
 
-<!-- HERO -->
+<!-- ==================== HERO ==================== -->
 
 <header class="hero">
 
-    <div class="hero-content">
+    <div class="hero-inner">
 
-        <!-- pfp.png must be uploaded beside index.html -->
+        <div>
 
-        <img
-            src="pfp.png"
-            alt="Professional photograph of Aaraiz Zeeshan"
-            class="profile-picture"
-        >
+            <div class="hero-label">
+                SOFTWARE • AI • TECHNOLOGY
+            </div>
 
-        <span class="eyebrow">
-            Career Portfolio
-        </span>
+            <h1>
+                Aaraiz Zeeshan
+            </h1>
 
-        <h1>
-            Aaraiz Zeeshan
-        </h1>
+            <p class="hero-role">
+                Computer Science Graduate & Software Engineering Intern
+            </p>
 
-        <h2>
-            Computer Science Graduate • Software Engineering • Artificial Intelligence
-        </h2>
+            <p class="hero-description">
+                I like figuring out how things work, solving problems,
+                and turning ideas into something useful. My background
+                includes software engineering, data, artificial intelligence,
+                backend development, and cloud technology.
+            </p>
 
-        <p class="hero-description">
-            I enjoy solving problems, learning new technologies, and
-            building software that connects technical ideas with real
-            world needs.
-        </p>
+            <div class="hero-buttons">
 
-        <div class="hero-buttons">
+                <a
+                    href="#projects"
+                    class="button button-primary"
+                >
+                    View My Work
+                </a>
 
-            <a
-                href="#projects"
-                class="button button-primary"
-            >
-                Explore My Work
-            </a>
+                <a
+                    href="https://www.linkedin.com/in/aaraizzeeshan"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="button button-outline"
+                >
+                    LinkedIn
+                </a>
 
-            <a
-                href="https://www.linkedin.com/in/aaraizzeeshan"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="button button-outline"
-            >
-                LinkedIn
-            </a>
+                <a
+                    href="mailto:aaraizzeeshan@gmail.com"
+                    class="button button-outline"
+                >
+                    Email Me
+                </a>
 
-            <a
-                href="#contact"
-                class="button button-outline"
-            >
-                Contact Me
-            </a>
+            </div>
+
+        </div>
+
+
+        <div class="hero-photo-wrap">
+
+            <div class="photo-frame">
+
+                <img
+                    src="pfp.png"
+                    alt="Professional photograph of Aaraiz Zeeshan"
+                    class="profile-picture"
+                >
+
+            </div>
 
         </div>
 
@@ -713,77 +1174,112 @@
 <main>
 
 
-<!-- ABOUT -->
+<!-- ==================== ABOUT ==================== -->
 
 <section id="about">
 
     <div class="section-heading">
 
+        <div class="section-kicker">
+            About
+        </div>
+
         <h2>
-            About Me
+            A little more about me.
         </h2>
 
         <p>
-            A little about my background and where I want to go next.
+            My background, interests, and what I am looking to build on next.
         </p>
-
-        <div class="underline"></div>
 
     </div>
 
 
-    <div class="card">
+    <div class="about-grid">
 
-        <p class="about-text">
-            I am a Computer Science graduate from DePaul University with
-            a strong interest in software engineering, artificial intelligence,
-            and cloud technology. I enjoy solving problems, learning new
-            technologies, and understanding how different parts of a system
-            work together. Through my professional experience and academic
-            projects, I have gained experience with software development,
-            backend systems, databases, data, teamwork, and communication.
-            I am looking to continue growing in the technology field while
-            working on projects that challenge me and have a meaningful impact.
-        </p>
+        <div class="card about-main">
+
+            <p>
+                I am a Computer Science graduate from DePaul University
+                with a concentration in Artificial Intelligence. I have
+                always been interested in technology, but what I enjoy
+                most is the problem solving side of it. I like taking
+                something that seems complicated, breaking it down,
+                and figuring out how to make it work.
+            </p>
+
+            <p>
+                Through my internship, previous data experience, and
+                projects at DePaul, I have worked with software development,
+                backend systems, databases, artificial intelligence,
+                networking, and cloud technology. I have also learned that
+                being good technically is only part of the job. Being able
+                to communicate, ask questions, take feedback, and work with
+                other people matters just as much.
+            </p>
+
+            <p>
+                Going forward, I want to keep growing as a software engineer
+                and continue building experience in areas where software,
+                AI, and real business needs come together. I am always
+                looking for opportunities that challenge me, teach me
+                something new, and give me the chance to build work I can
+                be proud of.
+            </p>
+
+        </div>
 
 
-        <div class="quick-info">
+        <div class="about-side">
 
-            <div class="quick-item">
-
-                <strong>
-                    Focus
-                </strong>
+            <div class="quick-card">
 
                 <span>
-                    Software Engineering & AI
-                </span>
-
-            </div>
-
-
-            <div class="quick-item">
-
-                <strong>
                     Education
-                </strong>
-
-                <span>
-                    B.S. Computer Science
                 </span>
+
+                <strong>
+                    B.S. Computer Science
+                </strong>
 
             </div>
 
 
-            <div class="quick-item">
-
-                <strong>
-                    University
-                </strong>
+            <div class="quick-card">
 
                 <span>
-                    DePaul University
+                    Concentration
                 </span>
+
+                <strong>
+                    Artificial Intelligence
+                </strong>
+
+            </div>
+
+
+            <div class="quick-card">
+
+                <span>
+                    Career Focus
+                </span>
+
+                <strong>
+                    Software Engineering
+                </strong>
+
+            </div>
+
+
+            <div class="quick-card">
+
+                <span>
+                    Interests
+                </span>
+
+                <strong>
+                    Software • AI • Cloud
+                </strong>
 
             </div>
 
@@ -794,125 +1290,146 @@
 </section>
 
 
-
-<!-- EXPERIENCE -->
+<!-- ==================== EXPERIENCE ==================== -->
 
 <section id="experience">
 
     <div class="section-heading">
 
+        <div class="section-kicker">
+            Experience
+        </div>
+
         <h2>
-            Professional Experience
+            Where I have put my skills into practice.
         </h2>
 
         <p>
-            Experience that has helped me grow technically and professionally.
+            Professional experiences that helped me learn how technology
+            is actually used outside the classroom.
         </p>
 
-        <div class="underline"></div>
-
     </div>
 
 
-    <!-- EMBELLISH TREND -->
-
-    <div class="card experience-card">
-
-        <div class="experience-top">
-
-            <div>
-
-                <h3>
-                    Software Engineering Intern
-                </h3>
-
-                <p class="company">
-                    Embellish Trend
-                </p>
-
-            </div>
+    <div class="timeline">
 
 
-            <span class="experience-badge">
-                Software Engineering
-            </span>
+        <!-- EMBELLISH TREND -->
 
-        </div>
+        <div class="experience-item">
 
+            <div class="timeline-dot"></div>
 
-        <div class="experience-description">
+            <div class="card experience-card">
 
-            <p>
-                At Embellish Trend, I support the development and improvement
-                of the company's website and digital tools. My responsibilities
-                include completing technical tasks, troubleshooting issues,
-                collaborating with team members, and making updates based on
-                project requirements.
-            </p>
+                <div class="experience-top">
 
-            <p>
-                Throughout my internship, I have become more independent in
-                completing assignments and more confident communicating with
-                others about project needs. I have learned how to ask the right
-                questions, receive feedback, make adjustments, and approach
-                technical problems from both a user and business perspective.
-            </p>
+                    <div>
 
-            <p>
-                This experience has given me a better understanding of how
-                software development works in a professional environment while
-                strengthening my problem solving, communication, teamwork, and
-                technical skills.
-            </p>
+                        <h3>
+                            Software Engineering Intern
+                        </h3>
 
-        </div>
+                        <p class="company">
+                            Embellish Trend
+                        </p>
 
-    </div>
+                    </div>
+
+                    <span class="experience-type">
+                        Software Engineering
+                    </span>
+
+                </div>
 
 
-    <!-- GEM ACADEMY -->
+                <div class="experience-description">
 
-    <div class="card experience-card">
+                    <p>
+                        At Embellish Trend, I support the development
+                        and improvement of the company's website and
+                        digital tools. I work on technical tasks,
+                        troubleshoot issues, collaborate with the team,
+                        and make updates based on project needs.
+                    </p>
 
-        <div class="experience-top">
+                    <p>
+                        One of the biggest things I have gained from this
+                        internship is becoming more comfortable working
+                        independently while still knowing when to ask
+                        questions or get feedback. I have also gotten
+                        better at understanding requirements before
+                        starting a task and adjusting my work when
+                        something changes.
+                    </p>
 
-            <div>
+                    <p>
+                        The internship has given me a better idea of what
+                        software development looks like in an actual
+                        workplace. It has helped me grow technically,
+                        communicate better with others, and become more
+                        confident working through problems on my own.
+                    </p>
 
-                <h3>
-                    Junior Data Analyst
-                </h3>
-
-                <p class="company">
-                    GEM Academy and Center
-                </p>
+                </div>
 
             </div>
 
-
-            <span class="experience-badge">
-                Data & Analytics
-            </span>
-
         </div>
 
 
-        <div class="experience-description">
+        <!-- GEM ACADEMY -->
 
-            <p>
-                At GEM Academy and Center, I worked with data to help organize,
-                analyze, and maintain information used by the organization.
-                My responsibilities included reviewing datasets, checking
-                information for accuracy, and helping turn data into useful
-                insights.
-            </p>
+        <div class="experience-item">
 
-            <p>
-                The role helped me become more comfortable working with data
-                in a professional environment while strengthening my analytical,
-                problem solving, and communication skills. It also gave me
-                experience handling information carefully and presenting
-                findings in a clear and useful way.
-            </p>
+            <div class="timeline-dot"></div>
+
+            <div class="card experience-card">
+
+                <div class="experience-top">
+
+                    <div>
+
+                        <h3>
+                            Junior Data Analyst
+                        </h3>
+
+                        <p class="company">
+                            GEM Academy and Center
+                        </p>
+
+                    </div>
+
+                    <span class="experience-type">
+                        Data & Analytics
+                    </span>
+
+                </div>
+
+
+                <div class="experience-description">
+
+                    <p>
+                        At GEM Academy and Center, I worked with data
+                        used by the organization and helped keep
+                        information organized, accurate, and useful.
+                        My work included reviewing datasets, checking
+                        for inconsistencies, and helping organize
+                        information so it could be used more effectively.
+                    </p>
+
+                    <p>
+                        This role helped me become more comfortable
+                        working with data in a professional setting.
+                        It also strengthened my attention to detail,
+                        analytical thinking, and ability to communicate
+                        information clearly.
+                    </p>
+
+                </div>
+
+            </div>
 
         </div>
 
@@ -921,27 +1438,29 @@
 </section>
 
 
-
-<!-- PROJECTS -->
+<!-- ==================== PROJECTS ==================== -->
 
 <section id="projects">
 
     <div class="section-heading">
 
-        <h2>
+        <div class="section-kicker">
             Selected Work
+        </div>
+
+        <h2>
+            Projects that helped shape my technical skills.
         </h2>
 
         <p>
-            A few projects that represent the kind of technical work I enjoy.
+            A few projects I chose because each one challenged me
+            in a different area of computer science.
         </p>
-
-        <div class="underline"></div>
 
     </div>
 
 
-    <div class="grid">
+    <div class="projects-grid">
 
 
         <!-- HEARTBEAT -->
@@ -949,7 +1468,7 @@
         <article class="project-card">
 
             <div class="project-number">
-                PROJECT 01
+                01 • FULL STACK / BACKEND
             </div>
 
             <h3>
@@ -957,15 +1476,32 @@
             </h3>
 
             <p>
-                Worked on the backend of a Flutter mobile application using
-                Spring Boot and PostgreSQL. My work included application
-                entities, controllers, database integration, and functionality
-                used to manage courses, assignments, and submissions.
+                HeartBeat was a team application built around managing
+                courses, assignments, and submissions. I worked primarily
+                on the backend using Spring Boot and PostgreSQL, including
+                application entities, controllers, database integration,
+                and functionality used by the mobile frontend.
             </p>
 
-            <span class="tag">
-                Spring Boot • Flutter • PostgreSQL
-            </span>
+            <div class="project-tags">
+
+                <span class="tag">
+                    Java
+                </span>
+
+                <span class="tag">
+                    Spring Boot
+                </span>
+
+                <span class="tag">
+                    PostgreSQL
+                </span>
+
+                <span class="tag">
+                    Flutter
+                </span>
+
+            </div>
 
         </article>
 
@@ -975,7 +1511,7 @@
         <article class="project-card">
 
             <div class="project-number">
-                PROJECT 02
+                02 • JAVA
             </div>
 
             <h3>
@@ -983,14 +1519,27 @@
             </h3>
 
             <p>
-                Developed a Java based trading simulation while applying
-                object oriented programming concepts such as inheritance,
-                interfaces, exception handling, and software design patterns.
+                A Java based trading simulation that gave me more experience
+                working with object oriented design. I used concepts such
+                as inheritance, interfaces, exception handling, enums,
+                and design patterns to organize a larger application.
             </p>
 
-            <span class="tag">
-                Java • Object Oriented Design
-            </span>
+            <div class="project-tags">
+
+                <span class="tag">
+                    Java
+                </span>
+
+                <span class="tag">
+                    OOP
+                </span>
+
+                <span class="tag">
+                    Design Patterns
+                </span>
+
+            </div>
 
         </article>
 
@@ -1000,7 +1549,7 @@
         <article class="project-card">
 
             <div class="project-number">
-                PROJECT 03
+                03 • SOFTWARE DESIGN
             </div>
 
             <h3>
@@ -1008,14 +1557,27 @@
             </h3>
 
             <p>
-                Created Java classes for working with financial price objects,
-                including validation, arithmetic operations, comparisons,
-                exception handling, and factory based object creation.
+                Developed Java classes for working with financial price
+                objects. The project included validation, comparison,
+                arithmetic operations, exception handling, and a factory
+                pattern for creating objects consistently.
             </p>
 
-            <span class="tag">
-                Java • Design Patterns
-            </span>
+            <div class="project-tags">
+
+                <span class="tag">
+                    Java
+                </span>
+
+                <span class="tag">
+                    Factory Pattern
+                </span>
+
+                <span class="tag">
+                    OOP
+                </span>
+
+            </div>
 
         </article>
 
@@ -1025,7 +1587,7 @@
         <article class="project-card">
 
             <div class="project-number">
-                PROJECT 04
+                04 • NETWORKING
             </div>
 
             <h3>
@@ -1033,14 +1595,27 @@
             </h3>
 
             <p>
-                Configured Cisco routers and switches, assigned IP addresses,
-                connected network devices, and tested and troubleshot
-                communication between systems.
+                Configured Cisco routers and switches through the command
+                line, assigned IP addresses, connected multiple network
+                devices, and tested communication between systems while
+                troubleshooting connectivity problems.
             </p>
 
-            <span class="tag">
-                Networking • Cisco
-            </span>
+            <div class="project-tags">
+
+                <span class="tag">
+                    Cisco
+                </span>
+
+                <span class="tag">
+                    Networking
+                </span>
+
+                <span class="tag">
+                    Troubleshooting
+                </span>
+
+            </div>
 
         </article>
 
@@ -1050,34 +1625,35 @@
 </section>
 
 
-
-<!-- SKILLS -->
+<!-- ==================== SKILLS ==================== -->
 
 <section id="skills">
 
     <div class="section-heading">
 
-        <h2>
+        <div class="section-kicker">
             Skills
+        </div>
+
+        <h2>
+            What I work with.
         </h2>
 
         <p>
-            Technologies and areas I have developed through school,
-            projects, and professional experience.
+            Skills I have developed through classes, projects,
+            internships, and independent learning.
         </p>
-
-        <div class="underline"></div>
 
     </div>
 
 
-    <div class="card">
+    <div class="card skills-card">
 
 
-        <div class="skill-category">
+        <div class="skill-section">
 
             <h3>
-                Programming
+                Programming Languages
             </h3>
 
             <div class="skills">
@@ -1094,7 +1670,7 @@
         </div>
 
 
-        <div class="skill-category">
+        <div class="skill-section">
 
             <h3>
                 Frameworks & Development
@@ -1103,47 +1679,80 @@
             <div class="skills">
 
                 <span class="skill">Spring Boot</span>
-                <span class="skill">Flutter</span>
                 <span class="skill">FastAPI</span>
-                <span class="skill">Git</span>
+                <span class="skill">Flutter</span>
                 <span class="skill">PostgreSQL</span>
+                <span class="skill">Git</span>
 
             </div>
 
         </div>
 
 
-        <div class="skill-category">
+        <div class="skill-section">
 
             <h3>
-                Technology
+                Technical Areas
             </h3>
 
             <div class="skills">
 
-                <span class="skill">Artificial Intelligence</span>
-                <span class="skill">Machine Learning</span>
-                <span class="skill">Cloud Computing</span>
-                <span class="skill">Linux</span>
-                <span class="skill">Networking</span>
+                <span class="skill">
+                    Artificial Intelligence
+                </span>
+
+                <span class="skill">
+                    Machine Learning
+                </span>
+
+                <span class="skill">
+                    Cloud Computing
+                </span>
+
+                <span class="skill">
+                    Linux
+                </span>
+
+                <span class="skill">
+                    Networking
+                </span>
+
+                <span class="skill">
+                    Databases
+                </span>
 
             </div>
 
         </div>
 
 
-        <div class="skill-category">
+        <div class="skill-section">
 
             <h3>
-                Professional
+                Professional Skills
             </h3>
 
             <div class="skills">
 
-                <span class="skill">Problem Solving</span>
-                <span class="skill">Communication</span>
-                <span class="skill">Teamwork</span>
-                <span class="skill">Adaptability</span>
+                <span class="skill">
+                    Problem Solving
+                </span>
+
+                <span class="skill">
+                    Communication
+                </span>
+
+                <span class="skill">
+                    Teamwork
+                </span>
+
+                <span class="skill">
+                    Adaptability
+                </span>
+
+                <span class="skill">
+                    Continuous Learning
+                </span>
 
             </div>
 
@@ -1154,46 +1763,100 @@
 </section>
 
 
-
-<!-- EDUCATION -->
+<!-- ==================== EDUCATION ==================== -->
 
 <section id="education">
 
     <div class="section-heading">
 
-        <h2>
-            Education
-        </h2>
+        <div class="section-kicker">
+            Education & Development
+        </div>
 
-        <div class="underline"></div>
+        <h2>
+            Building the foundation.
+        </h2>
 
     </div>
 
 
-    <div class="card">
-
-        <h3 class="education-school">
-            DePaul University
-        </h3>
-
-        <p class="degree">
-            Bachelor of Science in Computer Science
-        </p>
-
-        <p class="minor-detail">
-            Concentration in Artificial Intelligence
-        </p>
+    <div class="education-layout">
 
 
-        <div class="achievement-box">
+        <div class="card education-card">
 
-            <strong>
-                Academic Recognition
-            </strong>
+            <h3>
+                DePaul University
+            </h3>
 
-            <p>
-                Dean's List: Autumn 2024, Winter 2025, and Spring 2025
+            <p class="degree">
+                Bachelor of Science in Computer Science
             </p>
+
+            <p class="education-detail">
+                Concentration in Artificial Intelligence
+            </p>
+
+
+            <div class="recognition">
+
+                <strong>
+                    Academic Recognition
+                </strong>
+
+                <p>
+                    Dean's List:
+                    Autumn 2024,
+                    Winter 2025,
+                    and Spring 2025
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div>
+
+
+            <div class="card cert-card">
+
+                <h3>
+                    Cloud Digital Leader
+                </h3>
+
+                <p class="cert-provider">
+                    Google Cloud
+                </p>
+
+                <p>
+                    Built knowledge of cloud technology,
+                    digital transformation, security,
+                    Google Cloud services, and how cloud
+                    solutions support business needs.
+                </p>
+
+            </div>
+
+
+            <div class="card cert-card">
+
+                <h3>
+                    Google Cloud Learning
+                </h3>
+
+                <p class="cert-provider">
+                    Google Cloud
+                </p>
+
+                <p>
+                    Completed additional learning covering
+                    artificial intelligence, data, security,
+                    infrastructure, and digital transformation.
+                </p>
+
+            </div>
+
 
         </div>
 
@@ -1202,96 +1865,32 @@
 </section>
 
 
-
-<!-- CERTIFICATIONS -->
-
-<section id="certifications">
-
-    <div class="section-heading">
-
-        <h2>
-            Certifications & Development
-        </h2>
-
-        <p>
-            Learning beyond the classroom.
-        </p>
-
-        <div class="underline"></div>
-
-    </div>
-
-
-    <div class="grid">
-
-
-        <div class="project-card cert-card">
-
-            <h3>
-                Cloud Digital Leader
-            </h3>
-
-            <p class="cert-provider">
-                Google Cloud
-            </p>
-
-            <p>
-                Developed knowledge of cloud technology, digital
-                transformation, Google Cloud services, security,
-                and business applications of cloud computing.
-            </p>
-
-        </div>
-
-
-        <div class="project-card cert-card">
-
-            <h3>
-                Google Cloud Learning
-            </h3>
-
-            <p class="cert-provider">
-                Google Cloud
-            </p>
-
-            <p>
-                Completed additional learning covering artificial
-                intelligence, data, cloud infrastructure, security,
-                and digital transformation.
-            </p>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- VOLUNTEER -->
+<!-- ==================== VOLUNTEER ==================== -->
 
 <section id="volunteer">
 
     <div class="section-heading">
 
+        <div class="section-kicker">
+            Beyond Work
+        </div>
+
         <h2>
-            Volunteer Experience
+            Using technology to help others.
         </h2>
 
         <p>
-            Using technology to help others.
+            Experiences outside of school and work that helped me
+            become more comfortable explaining technology to others.
         </p>
-
-        <div class="underline"></div>
 
     </div>
 
 
-    <div class="grid">
+    <div class="volunteer-grid">
 
 
-        <div class="project-card volunteer-card">
+        <div class="card volunteer-card">
 
             <h3>
                 Volunteer Technology Assistant
@@ -1302,15 +1901,17 @@
             </h4>
 
             <p>
-                Helped patrons with technology questions, device setup,
-                applications, and online services while explaining solutions
-                in a clear and approachable way.
+                Helped patrons with everyday technology questions,
+                device setup, applications, and online services.
+                A big part of the experience was learning how to
+                explain technical solutions in a way that was easy
+                for someone else to understand.
             </p>
 
         </div>
 
 
-        <div class="project-card volunteer-card">
+        <div class="card volunteer-card">
 
             <h3>
                 PC Building & Setup
@@ -1321,9 +1922,9 @@
             </h4>
 
             <p>
-                Helped with selecting compatible hardware, assembling
-                computers, installing operating systems and drivers,
-                and troubleshooting completed systems.
+                Helped with selecting compatible hardware,
+                assembling computers, installing operating systems
+                and drivers, and troubleshooting issues after setup.
             </p>
 
         </div>
@@ -1334,31 +1935,49 @@
 </section>
 
 
-
-<!-- CONTACT -->
+<!-- ==================== CONTACT ==================== -->
 
 <section id="contact">
 
-    <div class="contact-section">
-
-        <h2>
-            Let's Connect
-        </h2>
-
-        <p>
-            I am always interested in connecting with others in technology
-            and learning about opportunities where I can continue growing
-            and contributing as a software engineer.
-        </p>
+    <div class="contact-box">
 
 
-        <div class="contact-buttons">
+        <div>
+
+            <div class="section-kicker"
+                 style="color:#a9cee9;">
+                Contact
+            </div>
+
+            <h2>
+                Let's connect.
+            </h2>
+
+            <p>
+                I am always open to connecting with people in technology,
+                learning from others, and hearing about opportunities
+                where I can keep growing as a software engineer.
+            </p>
+
+        </div>
+
+
+        <div class="contact-actions">
+
 
             <a
                 href="mailto:aaraizzeeshan@gmail.com"
-                class="button button-primary"
+                class="contact-link"
             >
-                Email Me
+
+                <strong>
+                    Email
+                </strong>
+
+                <span>
+                    aaraizzeeshan@gmail.com
+                </span>
+
             </a>
 
 
@@ -1366,10 +1985,19 @@
                 href="https://www.linkedin.com/in/aaraizzeeshan"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="button button-outline"
+                class="contact-link"
             >
-                LinkedIn
+
+                <strong>
+                    LinkedIn
+                </strong>
+
+                <span>
+                    linkedin.com/in/aaraizzeeshan
+                </span>
+
             </a>
+
 
         </div>
 
@@ -1381,8 +2009,7 @@
 </main>
 
 
-
-<!-- FOOTER -->
+<!-- ==================== FOOTER ==================== -->
 
 <footer>
 
@@ -1396,7 +2023,7 @@
         Computer Science • Software Engineering • Artificial Intelligence
     </p>
 
-    <p style="margin-top: 12px; opacity: 0.75;">
+    <p class="footer-small">
         © 2026 Aaraiz Zeeshan
     </p>
 
@@ -1404,4 +2031,5 @@
 
 
 </body>
+
 </html>
