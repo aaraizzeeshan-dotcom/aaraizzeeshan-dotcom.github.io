@@ -60,7 +60,7 @@
             color: inherit;
         }
 
-        /* -------------------- NAVIGATION -------------------- */
+        /* NAVIGATION */
 
         nav {
             position: sticky;
@@ -121,13 +121,14 @@
             border-radius: 30px;
         }
 
-        /* -------------------- HERO -------------------- */
+        /* HERO */
 
         .hero {
             min-height: 92vh;
 
             display: flex;
             align-items: center;
+            justify-content: center;
 
             padding: 90px 8%;
 
@@ -156,18 +157,66 @@
 
         .hero-inner {
             width: 100%;
-            max-width: 1180px;
+            max-width: 900px;
 
             margin: auto;
 
-            display: grid;
-
-            grid-template-columns:
-                1.3fr 0.7fr;
-
+            display: flex;
+            flex-direction: column;
             align-items: center;
 
-            gap: 70px;
+            text-align: center;
+        }
+
+        .hero-photo-wrap {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            width: 100%;
+
+            margin-bottom: 28px;
+        }
+
+        .photo-frame {
+            position: relative;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .photo-frame::before {
+            content: "";
+
+            position: absolute;
+
+            width: 270px;
+            height: 270px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(89, 158, 213, 0.28);
+
+            filter: blur(2px);
+        }
+
+        .profile-picture {
+            position: relative;
+
+            width: 270px;
+            height: 270px;
+
+            border-radius: 50%;
+
+            object-fit: cover;
+            object-position: center;
+
+            border: 7px solid white;
+
+            box-shadow:
+                0 22px 55px rgba(0,0,0,0.35);
         }
 
         .hero-label {
@@ -225,6 +274,7 @@
         .hero-buttons {
             display: flex;
             flex-wrap: wrap;
+            justify-content: center;
 
             gap: 13px;
 
@@ -275,51 +325,7 @@
                 rgba(255,255,255,0.10);
         }
 
-        .hero-photo-wrap {
-            display: flex;
-            justify-content: center;
-        }
-
-        .photo-frame {
-            position: relative;
-        }
-
-        .photo-frame::before {
-            content: "";
-
-            position: absolute;
-
-            width: 270px;
-            height: 270px;
-
-            top: 18px;
-            left: 18px;
-
-            border-radius: 50%;
-
-            background:
-                rgba(89, 158, 213, 0.28);
-
-            filter: blur(2px);
-        }
-
-        .profile-picture {
-            position: relative;
-
-            width: 270px;
-            height: 270px;
-
-            border-radius: 50%;
-
-            object-fit: cover;
-
-            border: 7px solid white;
-
-            box-shadow:
-                0 22px 55px rgba(0,0,0,0.35);
-        }
-
-        /* -------------------- GENERAL -------------------- */
+        /* GENERAL */
 
         main {
             max-width: 1160px;
@@ -382,7 +388,7 @@
             box-shadow: var(--shadow);
         }
 
-        /* -------------------- ABOUT -------------------- */
+        /* ABOUT */
 
         .about-grid {
             display: grid;
@@ -446,7 +452,7 @@
             font-size: 16px;
         }
 
-        /* -------------------- EXPERIENCE -------------------- */
+        /* EXPERIENCE */
 
         .timeline {
             position: relative;
@@ -550,7 +556,7 @@
             margin-bottom: 0;
         }
 
-        /* -------------------- PROJECTS -------------------- */
+        /* PROJECTS */
 
         .projects-grid {
             display: grid;
@@ -633,7 +639,7 @@
             font-weight: bold;
         }
 
-        /* -------------------- SKILLS -------------------- */
+        /* SKILLS */
 
         .skills-card {
             padding: 38px;
@@ -678,14 +684,11 @@
             font-weight: bold;
         }
 
-        /* -------------------- EDUCATION -------------------- */
+        /* EDUCATION */
 
-        .education-layout {
-            display: grid;
-
-            grid-template-columns:
-                1.2fr 0.8fr;
-
+        .education-stack {
+            display: flex;
+            flex-direction: column;
             gap: 24px;
         }
 
@@ -722,12 +725,15 @@
             color: var(--navy);
         }
 
-        .cert-card {
-            padding: 30px;
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-top: 24px;
         }
 
-        .cert-card + .cert-card {
-            margin-top: 17px;
+        .cert-card {
+            padding: 30px;
         }
 
         .cert-card h3 {
@@ -747,7 +753,7 @@
             margin-bottom: 9px;
         }
 
-        /* -------------------- VOLUNTEER -------------------- */
+        /* VOLUNTEER */
 
         .volunteer-grid {
             display: grid;
@@ -776,7 +782,7 @@
             margin: 4px 0 12px;
         }
 
-        /* -------------------- CONTACT -------------------- */
+        /* CONTACT */
 
         .contact-box {
             display: grid;
@@ -869,7 +875,7 @@
             font-size: 13px;
         }
 
-        /* -------------------- FOOTER -------------------- */
+        /* FOOTER */
 
         footer {
             background: #06131f;
@@ -897,41 +903,30 @@
             font-size: 12px;
         }
 
-        /* -------------------- RESPONSIVE -------------------- */
+        /* RESPONSIVE */
 
         @media (max-width: 900px) {
 
             nav {
                 flex-direction: column;
-
                 gap: 12px;
             }
 
             .nav-links {
                 justify-content: center;
-
                 flex-wrap: wrap;
-
                 gap: 11px 16px;
             }
 
-            .hero-inner,
             .about-grid,
-            .education-layout,
             .contact-box {
                 grid-template-columns: 1fr;
             }
 
-            .hero {
-                text-align: center;
-            }
-
-            .hero-buttons {
-                justify-content: center;
-            }
-
-            .hero-photo-wrap {
-                order: -1;
+            .projects-grid,
+            .volunteer-grid,
+            .cert-grid {
+                grid-template-columns: 1fr;
             }
 
             .hero h1 {
@@ -946,11 +941,6 @@
             .photo-frame::before {
                 width: 210px;
                 height: 210px;
-            }
-
-            .projects-grid,
-            .volunteer-grid {
-                grid-template-columns: 1fr;
             }
 
             .contact-actions {
@@ -1044,7 +1034,7 @@
 <body>
 
 
-<!-- ==================== NAVIGATION ==================== -->
+<!-- NAVIGATION -->
 
 <nav>
 
@@ -1054,103 +1044,24 @@
 
     <ul class="nav-links">
 
-        <li>
-            <a href="#about">
-                About
-            </a>
-        </li>
-
-        <li>
-            <a href="#experience">
-                Experience
-            </a>
-        </li>
-
-        <li>
-            <a href="#projects">
-                Projects
-            </a>
-        </li>
-
-        <li>
-            <a href="#skills">
-                Skills
-            </a>
-        </li>
-
-        <li>
-            <a href="#education">
-                Education
-            </a>
-        </li>
-
-        <li>
-            <a href="#contact" class="nav-contact">
-                Contact
-            </a>
-        </li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#volunteer">Volunteer</a></li>
+        <li><a href="#contact" class="nav-contact">Contact</a></li>
 
     </ul>
 
 </nav>
 
 
-<!-- ==================== HERO ==================== -->
+<!-- HERO -->
 
 <header class="hero">
 
     <div class="hero-inner">
-
-        <div>
-
-            <div class="hero-label">
-                SOFTWARE • AI • TECHNOLOGY
-            </div>
-
-            <h1>
-                Aaraiz Zeeshan
-            </h1>
-
-            <p class="hero-role">
-                Computer Science Graduate & Software Engineering Intern
-            </p>
-
-            <p class="hero-description">
-                I like figuring out how things work, solving problems,
-                and turning ideas into something useful. My background
-                includes software engineering, data, artificial intelligence,
-                backend development, and cloud technology.
-            </p>
-
-            <div class="hero-buttons">
-
-                <a
-                    href="#projects"
-                    class="button button-primary"
-                >
-                    View My Work
-                </a>
-
-                <a
-                    href="https://www.linkedin.com/in/aaraizzeeshan"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="button button-outline"
-                >
-                    LinkedIn
-                </a>
-
-                <a
-                    href="mailto:aaraizzeeshan@gmail.com"
-                    class="button button-outline"
-                >
-                    Email Me
-                </a>
-
-            </div>
-
-        </div>
-
 
         <div class="hero-photo-wrap">
 
@@ -1166,6 +1077,52 @@
 
         </div>
 
+        <div class="hero-label">
+            SOFTWARE • AI • TECHNOLOGY
+        </div>
+
+        <h1>
+            Aaraiz Zeeshan
+        </h1>
+
+        <p class="hero-role">
+            Computer Science Graduate & Software Engineering Intern
+        </p>
+
+        <p class="hero-description">
+            I like figuring out how things work, solving problems,
+            and turning ideas into something useful. My background
+            includes software engineering, data, artificial intelligence,
+            backend development, and cloud technology.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a
+                href="#projects"
+                class="button button-primary"
+            >
+                View My Work
+            </a>
+
+            <a
+                href="https://www.linkedin.com/in/aaraizzeeshan"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="button button-outline"
+            >
+                LinkedIn
+            </a>
+
+            <a
+                href="mailto:aaraizzeeshan@gmail.com"
+                class="button button-outline"
+            >
+                Email Me
+            </a>
+
+        </div>
+
     </div>
 
 </header>
@@ -1174,7 +1131,7 @@
 <main>
 
 
-<!-- ==================== ABOUT ==================== -->
+<!-- ABOUT -->
 
 <section id="about">
 
@@ -1233,54 +1190,23 @@
         <div class="about-side">
 
             <div class="quick-card">
-
-                <span>
-                    Education
-                </span>
-
-                <strong>
-                    B.S. Computer Science
-                </strong>
-
+                <span>Education</span>
+                <strong>B.S. Computer Science</strong>
             </div>
 
-
             <div class="quick-card">
-
-                <span>
-                    Concentration
-                </span>
-
-                <strong>
-                    Artificial Intelligence
-                </strong>
-
+                <span>Concentration</span>
+                <strong>Artificial Intelligence</strong>
             </div>
 
-
             <div class="quick-card">
-
-                <span>
-                    Career Focus
-                </span>
-
-                <strong>
-                    Software Engineering
-                </strong>
-
+                <span>Career Focus</span>
+                <strong>Software Engineering</strong>
             </div>
 
-
             <div class="quick-card">
-
-                <span>
-                    Interests
-                </span>
-
-                <strong>
-                    Software • AI • Cloud
-                </strong>
-
+                <span>Interests</span>
+                <strong>Software • AI • Cloud</strong>
             </div>
 
         </div>
@@ -1290,7 +1216,7 @@
 </section>
 
 
-<!-- ==================== EXPERIENCE ==================== -->
+<!-- EXPERIENCE -->
 
 <section id="experience">
 
@@ -1315,8 +1241,6 @@
     <div class="timeline">
 
 
-        <!-- EMBELLISH TREND -->
-
         <div class="experience-item">
 
             <div class="timeline-dot"></div>
@@ -1326,15 +1250,8 @@
                 <div class="experience-top">
 
                     <div>
-
-                        <h3>
-                            Software Engineering Intern
-                        </h3>
-
-                        <p class="company">
-                            Embellish Trend
-                        </p>
-
+                        <h3>Software Engineering Intern</h3>
+                        <p class="company">Embellish Trend</p>
                     </div>
 
                     <span class="experience-type">
@@ -1379,8 +1296,6 @@
         </div>
 
 
-        <!-- GEM ACADEMY -->
-
         <div class="experience-item">
 
             <div class="timeline-dot"></div>
@@ -1390,15 +1305,8 @@
                 <div class="experience-top">
 
                     <div>
-
-                        <h3>
-                            Junior Data Analyst
-                        </h3>
-
-                        <p class="company">
-                            GEM Academy and Center
-                        </p>
-
+                        <h3>Junior Data Analyst</h3>
+                        <p class="company">GEM Academy and Center</p>
                     </div>
 
                     <span class="experience-type">
@@ -1438,7 +1346,7 @@
 </section>
 
 
-<!-- ==================== PROJECTS ==================== -->
+<!-- PROJECTS -->
 
 <section id="projects">
 
@@ -1463,8 +1371,6 @@
     <div class="projects-grid">
 
 
-        <!-- HEARTBEAT -->
-
         <article class="project-card">
 
             <div class="project-number">
@@ -1485,28 +1391,15 @@
 
             <div class="project-tags">
 
-                <span class="tag">
-                    Java
-                </span>
-
-                <span class="tag">
-                    Spring Boot
-                </span>
-
-                <span class="tag">
-                    PostgreSQL
-                </span>
-
-                <span class="tag">
-                    Flutter
-                </span>
+                <span class="tag">Java</span>
+                <span class="tag">Spring Boot</span>
+                <span class="tag">PostgreSQL</span>
+                <span class="tag">Flutter</span>
 
             </div>
 
         </article>
 
-
-        <!-- PRODUCTBOOK -->
 
         <article class="project-card">
 
@@ -1527,24 +1420,14 @@
 
             <div class="project-tags">
 
-                <span class="tag">
-                    Java
-                </span>
-
-                <span class="tag">
-                    OOP
-                </span>
-
-                <span class="tag">
-                    Design Patterns
-                </span>
+                <span class="tag">Java</span>
+                <span class="tag">OOP</span>
+                <span class="tag">Design Patterns</span>
 
             </div>
 
         </article>
 
-
-        <!-- PRICE FACTORY -->
 
         <article class="project-card">
 
@@ -1565,24 +1448,14 @@
 
             <div class="project-tags">
 
-                <span class="tag">
-                    Java
-                </span>
-
-                <span class="tag">
-                    Factory Pattern
-                </span>
-
-                <span class="tag">
-                    OOP
-                </span>
+                <span class="tag">Java</span>
+                <span class="tag">Factory Pattern</span>
+                <span class="tag">OOP</span>
 
             </div>
 
         </article>
 
-
-        <!-- NETWORKING -->
 
         <article class="project-card">
 
@@ -1603,29 +1476,20 @@
 
             <div class="project-tags">
 
-                <span class="tag">
-                    Cisco
-                </span>
-
-                <span class="tag">
-                    Networking
-                </span>
-
-                <span class="tag">
-                    Troubleshooting
-                </span>
+                <span class="tag">Cisco</span>
+                <span class="tag">Networking</span>
+                <span class="tag">Troubleshooting</span>
 
             </div>
 
         </article>
-
 
     </div>
 
 </section>
 
 
-<!-- ==================== SKILLS ==================== -->
+<!-- SKILLS -->
 
 <section id="skills">
 
@@ -1697,29 +1561,12 @@
 
             <div class="skills">
 
-                <span class="skill">
-                    Artificial Intelligence
-                </span>
-
-                <span class="skill">
-                    Machine Learning
-                </span>
-
-                <span class="skill">
-                    Cloud Computing
-                </span>
-
-                <span class="skill">
-                    Linux
-                </span>
-
-                <span class="skill">
-                    Networking
-                </span>
-
-                <span class="skill">
-                    Databases
-                </span>
+                <span class="skill">Artificial Intelligence</span>
+                <span class="skill">Machine Learning</span>
+                <span class="skill">Cloud Computing</span>
+                <span class="skill">Linux</span>
+                <span class="skill">Networking</span>
+                <span class="skill">Databases</span>
 
             </div>
 
@@ -1734,25 +1581,11 @@
 
             <div class="skills">
 
-                <span class="skill">
-                    Problem Solving
-                </span>
-
-                <span class="skill">
-                    Communication
-                </span>
-
-                <span class="skill">
-                    Teamwork
-                </span>
-
-                <span class="skill">
-                    Adaptability
-                </span>
-
-                <span class="skill">
-                    Continuous Learning
-                </span>
+                <span class="skill">Problem Solving</span>
+                <span class="skill">Communication</span>
+                <span class="skill">Teamwork</span>
+                <span class="skill">Adaptability</span>
+                <span class="skill">Continuous Learning</span>
 
             </div>
 
@@ -1763,7 +1596,7 @@
 </section>
 
 
-<!-- ==================== EDUCATION ==================== -->
+<!-- EDUCATION -->
 
 <section id="education">
 
@@ -1777,10 +1610,14 @@
             Building the foundation.
         </h2>
 
+        <p>
+            My academic path and continued learning in technology.
+        </p>
+
     </div>
 
 
-    <div class="education-layout">
+    <div class="education-stack">
 
 
         <div class="card education-card">
@@ -1816,7 +1653,24 @@
         </div>
 
 
-        <div>
+        <div class="card education-card">
+
+            <h3>
+                College of DuPage
+            </h3>
+
+            <p class="degree">
+                Associate of Science
+            </p>
+
+            <p class="education-detail">
+                Computer Science
+            </p>
+
+        </div>
+
+
+        <div class="cert-grid">
 
 
             <div class="card cert-card">
@@ -1865,7 +1719,7 @@
 </section>
 
 
-<!-- ==================== VOLUNTEER ==================== -->
+<!-- VOLUNTEER -->
 
 <section id="volunteer">
 
@@ -1935,7 +1789,7 @@
 </section>
 
 
-<!-- ==================== CONTACT ==================== -->
+<!-- CONTACT -->
 
 <section id="contact">
 
@@ -2009,7 +1863,7 @@
 </main>
 
 
-<!-- ==================== FOOTER ==================== -->
+<!-- FOOTER -->
 
 <footer>
 
@@ -2031,5 +1885,4 @@
 
 
 </body>
-
 </html>
